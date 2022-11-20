@@ -16,6 +16,7 @@ import urllib
 import pickle
 import tarfile
 import pathlib
+import streamlit.components.v1 as components
 
 u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
 page_title = "Weed Detech"
