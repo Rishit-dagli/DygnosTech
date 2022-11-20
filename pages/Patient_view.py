@@ -28,7 +28,7 @@ st.set_page_config(page_title=page_title, page_icon=u)
 
 def send_message(number, content):
     account_sid = 'AC20aaa1377b72c680707b052d7659c45c' 
-    auth_token = st.secrets["TWILI_AUTH"]
+    auth_token = st.secrets["TWILIO_AUTH"]
     client = Client(account_sid, auth_token) 
     
     message = client.messages.create(  
