@@ -143,7 +143,10 @@ with open("pages/serialized", "rb") as f:
 if file is None:
     pass
 else:
-    dictionary = {d: model.predict(list(d)) for d in ocr(file)}
+    drugs = ocr(file)
+    dictionary = {}
+    for i in drugs:
+        dictionary[i] = model.predict([i])
     st.text(dictionary)
     graph = graphviz.Digraph()
 
