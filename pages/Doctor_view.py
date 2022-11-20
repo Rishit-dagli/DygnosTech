@@ -46,7 +46,7 @@ st.markdown(
     f'<h1 style="color:#000000;font-size:24px;">{"Patients medical history:"}</h1>',
     unsafe_allow_html=True,
 )
-st.text_area(label="", value="Sleep disorder, consumed paracetamol")
+st.text_area(label="", value="Suffered from QRS, irregular heartbeat, Adenosine helped quick recovery")
 
 st.markdown(
     f'<h1 style="color:#000000;font-size:18px;">{"Prescribed drug:"}</h1>',
