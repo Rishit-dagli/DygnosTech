@@ -143,7 +143,7 @@ def display_se():
     for x in predict([drug]):
         st.text(x)
 
-st.button('Confirm', onclick=display_se)
+st.button('Confirm', on_click=display_se)
 
 # file = st.file_uploader("", type=["jpg", "png"])
 
