@@ -4,6 +4,7 @@
 # import cv2
 # import numpy as np
 import streamlit as st
+
 # import graphviz as graphviz
 # import matplotlib.pyplot as plt
 # import tensorflow as tf
@@ -43,14 +44,14 @@ def add_bg_from_url():
 add_bg_from_url()
 
 # Read file and keep in variable
-with open("pages/dtech_doctor.html", 'r') as f:
+with open("pages/dtech_doctor.html", "r") as f:
     html_data = f.read()
 
 # Show in webpage
 components.html(html_data, width=2000, height=350)
 
-#u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
-#st.image(u, width=150)
+# u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
+# st.image(u, width=150)
 
 # st.markdown(
 #     f'<h1 style="color:#000000;font-size:24px;">{"Witness the magic by simply uploading an image below and let our model do the talking."}</h1>',
@@ -61,7 +62,7 @@ st.markdown(
     f'<h1 style="color:#000000;font-size:24px;">{"Patients medical history:"}</h1>',
     unsafe_allow_html=True,
 )
-st.text_area(label='', value='Sleep disorder, consumed paracetamol')
+st.text_area(label="", value="Sleep disorder, consumed paracetamol")
 
 st.markdown(
     f'<h1 style="color:#000000;font-size:18px;">{"Prescribed drug:"}</h1>',
@@ -69,21 +70,22 @@ st.markdown(
 )
 
 
-drug = st.text_input('')
+drug = st.text_input("")
 
-class PostProcess():
+
+class PostProcess:
     def __init__(self) -> None:
         self.dn = self.load_dn()
         self.se = self.load_se()
 
     def load_dn(self):
         text = pathlib.Path("drug_name_labelmap.csv").read_text()
-        lines = text.split('\n')[1:-1]
+        lines = text.split("\n")[1:-1]
         return tf.io.decode_csv(lines, [str(), str()])
 
     def load_se(self):
         text = pathlib.Path("se_labelmap.csv").read_text()
-        lines = text.split('\n')[1:-1]
+        lines = text.split("\n")[1:-1]
         return tf.io.decode_csv(lines, [str(), str(), str()])
 
     def predict(self, x):
@@ -93,27 +95,29 @@ class PostProcess():
         i = 0
         flag = False
         for name in self.dn[1].numpy():
-            if name.decode('UTF-8') == x:
+            if name.decode("UTF-8") == x:
                 flag = True
-                id = self.dn[0][i].numpy().decode('UTF-8')
+                id = self.dn[0][i].numpy().decode("UTF-8")
             i += 1
         if not flag:
-            return 'OOD'
+            return "OOD"
         i = 0
         out = []
         id = id[:-1]
         id = id[1:]
         for ses in self.se[0].numpy():
-            if ses.decode('UTF-8') == id:
-                out.append(self.se[2][i].numpy().decode('UTF-8'))
+            if ses.decode("UTF-8") == id:
+                out.append(self.se[2][i].numpy().decode("UTF-8"))
             i += 1
         if out:
             return out[:5]
         else:
-            return 'OOD'
+            return "OOD"
+
 
 with open("pages/serialized", "rb") as f:
     model = pickle.load(f)
+
 
 def display_se():
     for x in model.predict([drug]):
@@ -122,7 +126,8 @@ def display_se():
             unsafe_allow_html=True,
         )
 
-st.button('Confirm', on_click=display_se)
+
+st.button("Confirm", on_click=display_se)
 
 # file = st.file_uploader("", type=["jpg", "png"])
 

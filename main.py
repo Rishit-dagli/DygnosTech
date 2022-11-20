@@ -2,7 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 
-
 u = "https://cdn.discordapp.com/attachments/1043363043947581533/1043716871876268132/DYGNOS__2_-removebg-preview.png"
 page_title = "Welcome to DygnosTech"
 
@@ -28,7 +27,7 @@ def add_bg_from_url():
 add_bg_from_url()
 
 # Read file and keep in variable
-with open("pages/dtech_main.html", 'r') as f:
+with open("pages/dtech_main.html", "r") as f:
     html_data = f.read()
 
 # Show in webpage

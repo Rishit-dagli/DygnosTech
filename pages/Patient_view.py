@@ -1,11 +1,12 @@
 # import os
 # import random
 # import urllib.request
-#import cv2
-#import numpy as np
+# import cv2
+# import numpy as np
 import streamlit as st
 import graphviz as graphviz
-#import matplotlib.pyplot as plt
+
+# import matplotlib.pyplot as plt
 # import tensorflow as tf
 # from appwrite.client import Client
 # from appwrite.input_file import InputFile
@@ -40,7 +41,7 @@ def add_bg_from_url():
 add_bg_from_url()
 
 # Read file and keep in variable
-with open("pages/dtech_patient.html", 'r') as f:
+with open("pages/dtech_patient.html", "r") as f:
     html_data = f.read()
 
 # Show in webpage
@@ -100,15 +101,15 @@ if file is None:
 else:
     graph = graphviz.Digraph()
 
-    graph.edge('Med', 'Dis')
+    graph.edge("Med", "Dis")
 
-    graph.edge('Med', 'S1')
+    graph.edge("Med", "S1")
 
-    graph.edge('Med', 'S2')
+    graph.edge("Med", "S2")
 
-    graph.edge('S1', 'Med for S1')
+    graph.edge("S1", "Med for S1")
 
-    graph.edge('S2', 'Med for S2')
+    graph.edge("S2", "Med for S2")
 
     st.graphviz_chart(graph)
     # img = Image.open(file)
