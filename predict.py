@@ -3,6 +3,9 @@ import tensorflow as tf
 import urllib
 import pickle
 import tarfile
+import cv2
+import pytesseract
+from PIL import Image
 
 class PostProcess():
     def __init__(self) -> None:
@@ -60,3 +63,26 @@ def load_model():
 
 def predict(drug_name):
     return load_model().predict(drug_name)
+
+def ocr(file):
+    def get_grayscale(image):
+        return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    img = Image.open(file)
+    del file
+    img = img.save("img.jpg")
+    img = cv2.imread('img.jpg')
+    custom_config = r'--oem 1 --psm 6'
+    a = pytesseract.image_to_string(get_grayscale(img), config=custom_config).split("\n")
+    for i in a:
+        if i.startswith("Drugs"):
+            drugs = i
+    pos = 0
+    for i in drugs:
+        if i == "-":
+            drugs = drugs[pos+1:]
+        pos += 1
+    drugs = drugs.lower().split(",")
+    drugs_updated = []
+    for i in drugs:
+        drugs_updated.append(i.strip())
+    return drugs_updated
