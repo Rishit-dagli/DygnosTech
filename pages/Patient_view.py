@@ -144,6 +144,7 @@ if file is None:
     pass
 else:
     dictionary = {d: model.predict(list(d)) for d in ocr(file)}
+    print(dictionary)
     graph = graphviz.Digraph()
 
     for k in dictionary:
