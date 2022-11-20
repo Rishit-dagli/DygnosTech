@@ -104,6 +104,11 @@ def ocr(file):
         drugs_updated.append(i.strip())
     return drugs_updated
 
+def send_message_onclick():
+    send_message(txt, """Dear User,
+                Here is a summary of your prescription:
+                Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0])
+    return None
 
 class PostProcess:
     def __init__(self) -> None:
@@ -146,7 +151,6 @@ class PostProcess:
         else:
             return "OOD"
 
-
 with open("pages/serialized", "rb") as f:
     model = pickle.load(f)
 
@@ -173,9 +177,8 @@ else:
         f'<h1 style="color:#000000;font-size:18px;">{"Mobile number, to receive a summary:"}</h1>',
         unsafe_allow_html=True,
     )
+
     txt = st.text_input("")
 
     if txt is not None:
-        st.button("Send Summary", on_click=send_message(txt, """Dear User,
-            Here is a summary of your prescription:
-            Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0]))
+        st.button("Send Summary", on_click=send_message_onclick)
