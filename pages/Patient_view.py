@@ -26,7 +26,7 @@ def add_bg_from_url():
         f"""
          <style>
          .stApp {{
-             background-image: url("https://i.pinimg.com/originals/1a/ee/5c/1aee5c344846f449350feae457ea350e.jpg");
+             background-image: url("https://cdn.discordapp.com/attachments/1043363043947581533/1043480856150409257/marcel-strauss-iCR53oVMqcs-unsplash.jpg"");
              background-attachment: fixed;
              background-size: cover
          }}
@@ -43,7 +43,7 @@ st.image(u, width=150)
 
 # Display markdown content
 st.markdown(
-    f'<h1 style="color:#000000;font-size:35px;">{"Patient Upload Screen"}</h1>',
+    f'<h1 style="color:#000000;font-size:35px;">{"Prescription Upload Screen"}</h1>',
     unsafe_allow_html=True,
 )
 # st.markdown(
