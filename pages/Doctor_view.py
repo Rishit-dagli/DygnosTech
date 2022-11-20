@@ -106,13 +106,13 @@ with open("pages/serialized", "rb") as f:
 
 def display_se():
     st.markdown(
-        f'<p style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1000px">{"Here is a personalized list of possible side effects, based on the patients medical history and current prescription: "}</p>',
+        f'<h4 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{"Here is a personalized list of possible side effects, based on the patient\'s medical history: "}</h4>',
         unsafe_allow_html=True,
     )
 
     for x in model.predict([drug]):
         st.markdown(
-            f'<p style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1000px">{x}</p>',
+            f'<h6 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{x}</h6>',
             unsafe_allow_html=True,
         )
 
