@@ -30,4 +30,4 @@ with open("pages/dtech_main.html", "r") as f:
     html_data = f.read()
 
 # Show in webpage
-components.html(html_data, width=800, height=700)
+components.html(html_data, width=800, height=600)
