@@ -38,8 +38,12 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
-st.image(u, width=150)
+# Read file and keep in variable
+with open("pages/dtech_patient.html", 'r') as f:
+    html_data = f.read()
+
+# Show in webpage
+components.html(html_data, width=2000, height=350)
 
 # Display markdown content
 st.markdown(
