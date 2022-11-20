@@ -17,8 +17,6 @@ import pickle
 import tarfile
 import pathlib
 
-shape = 224
-
 u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
 page_title = "Weed Detech"
 
@@ -43,12 +41,19 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
-st.image(u, width=150)
+# Read file and keep in variable
+with open("pages/dtech_doctor1.html", 'r') as f:
+    html_data = f.read()
+
+# Show in webpage
+components.html(html_data, width=2000, height=1000)
+
+#u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
+#st.image(u, width=150)
 
 # Display markdown content
 st.markdown(
-    f'<h1 style="color:#000000;font-size:35px;">{"Patient: Shivesh Prakash"}</h1>',
+    f'<h1 style="color:#000000;font-size:35px;">{"Patient: "}</h1>',
     unsafe_allow_html=True,
 )
 # st.markdown(
@@ -77,6 +82,8 @@ st.markdown(
     f'<h1 style="color:#000000;font-size:18px;">{"Prescribed drug:"}</h1>',
     unsafe_allow_html=True,
 )
+
+
 drug = st.text_input('')
 
 class PostProcess():
@@ -125,7 +132,10 @@ with open("pages/serialized", "rb") as f:
 
 def display_se():
     for x in model.predict([drug]):
-        st.text(x)
+        st.markdown(
+            f'<h1 style="color:#000000;font-size:18px;">{x}</h1>',
+            unsafe_allow_html=True,
+        )
 
 st.button('Confirm', on_click=display_se)
 
