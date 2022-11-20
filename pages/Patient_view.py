@@ -180,6 +180,7 @@ else:
             send_message(txt, """Dear User,
                     Here is a summary of your prescription:
                     Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0])
+            st.success("Message sent!")
         else:
             st.markdown(
                 f'<h1 style="color:#000000;font-size:18px;">{"Please enter a valid phone number"}</h1>',
