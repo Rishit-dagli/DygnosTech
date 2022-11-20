@@ -1,0 +1,5 @@
+tensorflow
+urllib
+pickle
+tarfile
+graphviz
