@@ -139,11 +139,11 @@ def load_model():
 def predict(drug_name):
     return load_model().predict(drug_name)
 
+def display_se():
+    for x in predict([drug]):
+        st.text(x)
 
-st.button('Confirm')
-
-for x in predict([drug]):
-    st.text(x)
+st.button('Confirm', onclick=display_se)
 
 # file = st.file_uploader("", type=["jpg", "png"])
 
