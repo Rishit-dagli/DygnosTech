@@ -1,10 +1,11 @@
-import streamlit as st
-import tensorflow as tf
-import urllib
 import pickle
 import tarfile
+import urllib
+
 import cv2
 import pytesseract
+import streamlit as st
+import tensorflow as tf
 from PIL import Image
 
 

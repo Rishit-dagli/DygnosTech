@@ -3,8 +3,13 @@
 # import urllib.request
 # import cv2
 # import numpy as np
-import streamlit as st
+import pathlib
+import pickle
+import tarfile
+import urllib
 
+import streamlit as st
+import streamlit.components.v1 as components
 # import graphviz as graphviz
 # import matplotlib.pyplot as plt
 # import tensorflow as tf
@@ -13,11 +18,6 @@ import streamlit as st
 # from appwrite.services.storage import Storage
 # from PIL import Image
 import tensorflow as tf
-import urllib
-import pickle
-import tarfile
-import pathlib
-import streamlit.components.v1 as components
 
 u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
 page_title = "Weed Detech"

@@ -3,9 +3,8 @@
 # import urllib.request
 # import cv2
 # import numpy as np
-import streamlit as st
 import graphviz as graphviz
-
+import streamlit as st
 # import matplotlib.pyplot as plt
 # import tensorflow as tf
 # from appwrite.client import Client
