@@ -147,7 +147,6 @@ else:
     dictionary = {}
     for i in drugs:
         dictionary[i] = model.predict([i])
-    st.text(dictionary)
     graph = graphviz.Digraph()
 
     for k in dictionary:
