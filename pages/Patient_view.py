@@ -33,8 +33,8 @@ def send_message(number, content):
     
     message = client.messages.create(  
                                 messaging_service_sid='MG5457bf2f2adfefe7e211ff4440d90d42', 
-                                body='Hello',
-                                to='number' 
+                                body=content,
+                                to=number 
                             ) 
 
 def add_bg_from_url():
