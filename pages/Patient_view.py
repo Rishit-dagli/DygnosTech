@@ -11,6 +11,7 @@ import graphviz as graphviz
 # from appwrite.input_file import InputFile
 # from appwrite.services.storage import Storage
 # from PIL import Image
+import streamlit.components.v1 as components
 
 shape = 224
 
