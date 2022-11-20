@@ -47,7 +47,7 @@ with open("pages/dtech_doctor.html", 'r') as f:
     html_data = f.read()
 
 # Show in webpage
-components.html(html_data, width=2000, height=400)
+components.html(html_data, width=2000, height=350)
 
 #u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
 #st.image(u, width=150)
