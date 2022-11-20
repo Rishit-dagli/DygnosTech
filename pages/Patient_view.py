@@ -158,7 +158,8 @@ else:
     dictionary = {}
     for i in drugs:
         dictionary[i] = model.predict([i])
-    graph = graphviz.Digraph(format='dot', rankdir='LR')
+    graph = graphviz.Digraph(format='dot')
+    graph.graph_attr['rankdir'] = 'LR'
 
     for k in dictionary:
         graph.edge("Alex", k)
