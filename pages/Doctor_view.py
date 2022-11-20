@@ -52,27 +52,11 @@ components.html(html_data, width=2000, height=1000)
 #u = "https://media-exp1.licdn.com/dms/image/C5603AQFRUUXJfYlB2A/profile-displayphoto-shrink_400_400/0/1649999815837?e=1674086400&v=beta&t=fZVmr6XYrVzxxl0x4mWh24ztwhvwWUgQpd_8Sod6-k4"
 #st.image(u, width=150)
 
-# Display markdown content
-st.markdown(
-    f'<h1 style="color:#000000;font-size:35px;">{"Patient: "}</h1>',
-    unsafe_allow_html=True,
-)
 # st.markdown(
 #     f'<h1 style="color:#000000;font-size:24px;">{"Witness the magic by simply uploading an image below and let our model do the talking."}</h1>',
 #     unsafe_allow_html=True,
 # )
-st.markdown(
-    f'<h1 style="color:#000000;font-size:18px;">{"Age: 18"}</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f'<h1 style="color:#000000;font-size:18px;">{"Gender: Male"}</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f'<h1 style="color:#000000;font-size:18px;">{"Height/Weight"}</h1>',
-    unsafe_allow_html=True,
-)
+
 st.markdown(
     f'<h1 style="color:#000000;font-size:24px;">{"Patients medical history:"}</h1>',
     unsafe_allow_html=True,
