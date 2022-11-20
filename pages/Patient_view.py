@@ -9,6 +9,7 @@ import cv2
 import graphviz as graphviz
 import pytesseract
 import streamlit as st
+from twilio.rest import Client
 
 # import matplotlib.pyplot as plt
 # import tensorflow as tf
@@ -25,6 +26,16 @@ page_title = "Patient Upload Screen"
 # Set page title and favicon.
 st.set_page_config(page_title=page_title, page_icon=u)
 
+def send_message(number, content):
+    account_sid = 'AC20aaa1377b72c680707b052d7659c45c' 
+    auth_token = st.secrets["TWILI_AUTH"]
+    client = Client(account_sid, auth_token) 
+    
+    message = client.messages.create(  
+                                messaging_service_sid='MG5457bf2f2adfefe7e211ff4440d90d42', 
+                                body='Hello',
+                                to='number' 
+                            ) 
 
 def add_bg_from_url():
     st.markdown(
@@ -154,11 +165,4 @@ else:
         for i in dictionary[k]:
             graph.edge(k, i)
 
-    st.graphviz_chart(graph)
-
-    st.markdown(
-        f'<h1 style="color:#000000;font-size:18px;">{"Mobile number, to share data:"}</h1>',
-        unsafe_allow_html=True,
-    )
-    txt = st.text_input("")
-    st.button('Confirm', on_click=)
+    st.graphviz_chart(graph, width = 200)
