@@ -106,7 +106,7 @@ with open("pages/serialized", "rb") as f:
 
 def display_se():
     st.markdown(
-        f'<h4 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{"Here is a personalized list of possible side effects, based on the patient\'s medical history: "}</h4>',
+        f'<h4 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{"Here is a personalized list of possible side effects, based on the patients medical history: "}</h4>',
         unsafe_allow_html=True,
     )
 
