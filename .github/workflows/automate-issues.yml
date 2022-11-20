@@ -2,17 +2,15 @@ name: Auto Assign Issues to Project
 
 on:
   issues:
-    types: [opened, labeled]
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    types:
+      - opened
 
 jobs:
-  assign_one_project:
+  add-to-project:
+    name: Add issue to project
     runs-on: ubuntu-latest
-    name: Assign to One Project
     steps:
-    - name: Assign new issues to project
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/users/Rishit-dagli/projects/6'
+      - uses: actions/add-to-project@0.3.0
+        with:
+          project-url: https://github.com/users/Rishit-dagli/projects/6
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
