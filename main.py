@@ -27,8 +27,6 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-path_to_html = "/Users/shiveshprakash/PycharmProjects/Pratham-Varshiya-Kaand/Nov-19/pages/tr.html"
-
 # Read file and keep in variable
 with open("pages/dtech_main.html", 'r') as f:
     html_data = f.read()
