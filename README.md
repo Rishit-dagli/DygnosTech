@@ -4,7 +4,7 @@ Today with the number of medications people have to take and considering the mul
 
 We thus ended up building DygnosTech through which doctors and patients can leverage the power of being able to predict the likely side effects a drug would have on the patient. This can greatly help doctors make better decisions as well as for the patient to understand what side effects the drugs he takes have. 
 
-## Usage
+## Install
 
 Run the following to install:
 
