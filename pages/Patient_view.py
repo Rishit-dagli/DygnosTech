@@ -160,7 +160,7 @@ else:
         dictionary[i] = model.predict([i])
     graph = graphviz.Digraph(format='dot')
     graph.graph_attr['rankdir'] = 'LR'
-    graph.graph_attr["bgcolor"] = "#000000ff"
+    graph.graph_attr["bgcolor"] = "#00000000"
 
     for k in dictionary:
         graph.edge("Alex", k)
@@ -174,6 +174,6 @@ else:
         unsafe_allow_html=True,
     )
     txt = st.text_input("")
-    st.button("", on_click=send_message(txt, """Dear User,
+    st.button("Send Summary", on_click=send_message(txt, """Dear User,
         Here is a summary of your prescription:
         Having """ + drugs[0] + "can cause" + model.predict([drugs[0]])[0]))
