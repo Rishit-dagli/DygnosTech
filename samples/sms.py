@@ -2,7 +2,7 @@ from twilio.rest import Client
 import streamlit as st
  
 account_sid = 'AC20aaa1377b72c680707b052d7659c45c' 
-auth_token = st.secrets["TWILI_AUTH"]
+auth_token = st.secrets["TWILIO_AUTH"]
 client = Client(account_sid, auth_token) 
  
 message = client.messages.create(  

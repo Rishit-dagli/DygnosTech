@@ -3,3 +3,4 @@ urllib3
 graphviz
 pytesseract
 opencv-python-headless
+twilio
