@@ -48,7 +48,7 @@ with open("pages/dtech_patient.html", "r") as f:
     html_data = f.read()
 
 # Show in webpage
-components.html(html_data, width=2000, height=250)
+components.html(html_data, width=2000, height=200)
 
 # Display markdown content
 st.markdown(
@@ -147,11 +147,11 @@ else:
     dictionary = {}
     for i in drugs:
         dictionary[i] = model.predict([i])
-    graph = graphviz.Digraph()
+    graph = graphviz.Digraph(format='png')
 
     for k in dictionary:
         graph.edge("Alex", k)
         for i in dictionary[k]:
             graph.edge(k, i)
 
-    st.graphviz_chart(graph)
+    st.graphviz_chart(graph, width = 200)
