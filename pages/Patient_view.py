@@ -155,3 +155,4 @@ else:
             graph.edge(k, i)
 
     st.graphviz_chart(graph)
+    st.image(graph)
