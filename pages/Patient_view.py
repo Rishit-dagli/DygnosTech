@@ -167,3 +167,12 @@ else:
             graph.edge(k, i)
 
     st.graphviz_chart(graph)
+
+    st.markdown(
+        f'<h1 style="color:#000000;font-size:18px;">{"Mobile number, to receive a summary:"}</h1>',
+        unsafe_allow_html=True,
+    )
+    txt = st.text_input("")
+    st.button("", on_click=send_message(txt, """Dear User,
+        Here is a summary of your prescription:
+        Having """ + drugs[0] + "can cause" + model.predict([drugs[0]])[0]))
