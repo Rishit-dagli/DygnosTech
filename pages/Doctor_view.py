@@ -112,7 +112,7 @@ def display_se():
 
     for x in model.predict([drug]):
         st.markdown(
-            f'<h6 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{x}</h6>',
+            f'<h6 style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1050px">{"- " + x}</h6>',
             unsafe_allow_html=True,
         )
 
