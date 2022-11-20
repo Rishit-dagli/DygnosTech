@@ -166,4 +166,4 @@ else:
         for i in dictionary[k]:
             graph.edge(k, i)
 
-    st.graphviz_chart(graph, width = 200)
+    st.graphviz_chart(graph)
