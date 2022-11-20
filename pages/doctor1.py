@@ -85,12 +85,12 @@ class PostProcess():
         self.se = self.load_se()
 
     def load_dn(self):
-        text = pathlib.Path("pages/drug_name_labelmap.csv").read_text()
+        text = pathlib.Path("drug_name_labelmap.csv").read_text()
         lines = text.split('\n')[1:-1]
         return tf.io.decode_csv(lines, [str(), str()])
 
     def load_se(self):
-        text = pathlib.Path("pages/se_labelmap.csv").read_text()
+        text = pathlib.Path("se_labelmap.csv").read_text()
         lines = text.split('\n')[1:-1]
         return tf.io.decode_csv(lines, [str(), str(), str()])
 
@@ -120,15 +120,11 @@ class PostProcess():
         else:
             return 'OOD'
 
-def load_model():
-    with open("pages/serialized", "rb") as f:
-        st.session_state["model"] = pickle.load(f)
-
-def predict(drug_name):
-    return load_model().predict(drug_name)
+with open("pages/serialized", "rb") as f:
+    model = pickle.load(f)
 
 def display_se():
-    for x in predict([drug]):
+    for x in model.predict([drug]):
         st.text(x)
 
 st.button('Confirm', on_click=display_se)
