@@ -124,7 +124,7 @@ class PostProcess():
 
 def load_model():
     if "model" not in st.session_state:
-        with open("serialized", "rb") as f:
+        with open("pages/serialized", "rb") as f:
             st.session_state.model = pickle.load(f)
     return st.session_state["model"]
 
