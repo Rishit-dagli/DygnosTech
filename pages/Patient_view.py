@@ -104,12 +104,6 @@ def ocr(file):
         drugs_updated.append(i.strip())
     return drugs_updated
 
-def send_message_onclick():
-    send_message(txt, """Dear User,
-                Here is a summary of your prescription:
-                Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0])
-    return None
-
 class PostProcess:
     def __init__(self) -> None:
         self.dn = self.load_dn()
@@ -180,5 +174,14 @@ else:
 
     txt = st.text_input("")
 
-    if txt is not None:
-        st.button("Send Summary", on_click=send_message_onclick)
+    if st.button("Send Summary"):
+        # check that txt contains a valid phone number
+        if txt.startswith("+"):
+            send_message(txt, """Dear User,
+                    Here is a summary of your prescription:
+                    Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0])
+        else:
+            st.markdown(
+                f'<h1 style="color:#000000;font-size:18px;">{"Please enter a valid phone number"}</h1>',
+                unsafe_allow_html=True,
+            )
