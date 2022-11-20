@@ -118,7 +118,7 @@ with open("pages/serialized", "rb") as f:
 def display_se():
     for x in model.predict([drug]):
         st.markdown(
-            f'<h1 style="color:#000000; font-family: Arial; font-size:18px; position: relative; top: 1000px">{x}</h1>',
+            f'<p style="color:#000000; font-family: Arial; font-size:15px; position: relative; top: 1200px">{x}</p>',
             unsafe_allow_html=True,
         )
 
