@@ -2,31 +2,7 @@
 import streamlit as st
 # from PIL import Image
 # import utils as utl
-from pages import patient
-
-# st.set_page_config(layout="wide", page_title='Navbar sample')
-# st.set_option('deprecation.showPyplotGlobalUse', False)
-# utl.inject_custom_css()
-# utl.navbar_component()
-#
-#
-# def navigation():
-#     route = utl.get_current_route()
-#     if route == "home":
-#         home.load_view()
-#     elif route == "about":
-#         about.load_view()
-#     elif route == "analysis":
-#         analysis.load_view()
-#     elif route == "options":
-#         options.load_view()
-#     elif route == "configuration":
-#         configuration.load_view()
-#     elif route == None:
-#         home.load_view()
-#
-#
-# navigation()
+# from pages import patient
 
 
 u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
@@ -53,7 +29,6 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
 st.image(u, width=150)
 
 st.markdown(
@@ -72,5 +47,3 @@ st.markdown(
     f'<h1 style="color:#000000;font-size:24px;">{"Farmers waste hours scouring fields to find weeds, our model helps them drastically reduce this time. Weed Detech helps farmer detect the position of weed on a field with a single photo click. Our model is trained on over 15000 images and achieves plausible performance."}</h1>',
     unsafe_allow_html=True,
 )
-
-# st.button('Try it out!!')
