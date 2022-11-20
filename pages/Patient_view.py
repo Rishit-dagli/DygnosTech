@@ -174,6 +174,8 @@ else:
         unsafe_allow_html=True,
     )
     txt = st.text_input("")
-    st.button("Send Summary", on_click=send_message(txt, """Dear User,
-        Here is a summary of your prescription:
-        Having """ + drugs[0] + "can cause" + model.predict([drugs[0]])[0]))
+
+    if txt is not None:
+        st.button("Send Summary", on_click=send_message(txt, """Dear User,
+            Here is a summary of your prescription:
+            Having """ + drugs[0] + " can cause " + model.predict([drugs[0]])[0]))
