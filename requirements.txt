@@ -1,4 +1,3 @@
 tensorflow
 urllib3
-tarfile
 graphviz
