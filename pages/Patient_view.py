@@ -160,6 +160,7 @@ else:
         dictionary[i] = model.predict([i])
     graph = graphviz.Digraph(format='dot')
     graph.graph_attr['rankdir'] = 'LR'
+    graph.graph_attr["bgcolor"] = "#000000ff"
 
     for k in dictionary:
         graph.edge("Alex", k)
