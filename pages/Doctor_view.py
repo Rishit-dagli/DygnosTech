@@ -43,7 +43,7 @@ def add_bg_from_url():
 add_bg_from_url()
 
 # Read file and keep in variable
-with open("dtech_doctor1.html", 'r') as f:
+with open("dtech_doctor.html", 'r') as f:
     html_data = f.read()
 
 # Show in webpage
