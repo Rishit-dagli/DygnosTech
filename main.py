@@ -1,12 +1,10 @@
-# import numpy as np
 import streamlit as st
-# from PIL import Image
-# import utils as utl
-# from pages import patient
+import streamlit.components.v1 as components
 
 
-u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
-page_title = "Home Screen"
+
+u = "https://cdn.discordapp.com/attachments/1043363043947581533/1043716871876268132/DYGNOS__2_-removebg-preview.png"
+page_title = "Welcome to DygnosTech"
 
 # Set page title and favicon.
 st.set_page_config(page_title=page_title, page_icon=u)
@@ -29,21 +27,11 @@ def add_bg_from_url():
 
 add_bg_from_url()
 
-st.image(u, width=150)
+path_to_html = "/Users/shiveshprakash/PycharmProjects/Pratham-Varshiya-Kaand/Nov-19/pages/tr.html"
 
-st.markdown(
-    f'<h1 style="color:#000000;font-size:35px;">{"Home Screen"}</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f'<h1 style="color:#000000;font-size:15px;">{"Spelled as We Detect"}</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f'<h1 style="color:#000000;font-size:15px;">{"Note: The word weed here refers to unwanted plant growth."}</h1>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f'<h1 style="color:#000000;font-size:24px;">{"Farmers waste hours scouring fields to find weeds, our model helps them drastically reduce this time. Weed Detech helps farmer detect the position of weed on a field with a single photo click. Our model is trained on over 15000 images and achieves plausible performance."}</h1>',
-    unsafe_allow_html=True,
-)
+# Read file and keep in variable
+with open(path_to_html, 'r') as f:
+    html_data = f.read()
+
+# Show in webpage
+components.html(html_data, width=2000, height=1000)
