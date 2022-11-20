@@ -1,21 +1,9 @@
-# import os
-# import random
-# import urllib.request
-# import cv2
-# import numpy as np
 import pickle
 
 import cv2
 import graphviz as graphviz
 import pytesseract
 import streamlit as st
-
-# import matplotlib.pyplot as plt
-# import tensorflow as tf
-# from appwrite.client import Client
-# from appwrite.input_file import InputFile
-# from appwrite.services.storage import Storage
-# from PIL import Image
 import streamlit.components.v1 as components
 from PIL import Image
 from twilio.rest import Client
