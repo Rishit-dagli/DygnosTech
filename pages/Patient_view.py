@@ -9,7 +9,6 @@ import cv2
 import graphviz as graphviz
 import pytesseract
 import streamlit as st
-from twilio.rest import Client 
 
 # import matplotlib.pyplot as plt
 # import tensorflow as tf
@@ -19,6 +18,7 @@ from twilio.rest import Client
 # from PIL import Image
 import streamlit.components.v1 as components
 from PIL import Image
+from twilio.rest import Client
 
 u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
 page_title = "Patient Upload Screen"
@@ -26,16 +26,18 @@ page_title = "Patient Upload Screen"
 # Set page title and favicon.
 st.set_page_config(page_title=page_title, page_icon=u)
 
+
 def send_message(number, content):
-    account_sid = 'AC20aaa1377b72c680707b052d7659c45c' 
+    account_sid = "AC20aaa1377b72c680707b052d7659c45c"
     auth_token = st.secrets["TWILIO_AUTH"]
-    client = Client(account_sid, auth_token) 
-    
-    message = client.messages.create(  
-                                messaging_service_sid='MG5457bf2f2adfefe7e211ff4440d90d42', 
-                                body=content,
-                                to=number 
-                            ) 
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+        messaging_service_sid="MG5457bf2f2adfefe7e211ff4440d90d42",
+        body=content,
+        to=number,
+    )
+
 
 def add_bg_from_url():
     st.markdown(
@@ -158,11 +160,11 @@ else:
     dictionary = {}
     for i in drugs:
         dictionary[i] = model.predict([i])
-    graph = graphviz.Digraph(format='png')
+    graph = graphviz.Digraph(format="png")
 
     for k in dictionary:
         graph.edge("Alex", k)
         for i in dictionary[k]:
             graph.edge(k, i)
 
-    st.graphviz_chart(graph, width = 200)
+    st.graphviz_chart(graph, width=200)
