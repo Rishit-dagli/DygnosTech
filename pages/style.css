@@ -1,0 +1,62 @@
+
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+div.logotext {
+    position: fixed;
+    top: -10px;
+    left: 33px;
+    font-size: 235%;
+    color: black;
+}
+
+.nav {
+    background-color: none;
+    list-style-type: none;
+    text-align: right;
+    margin: 0px;
+}
+
+.nav li {
+    display: inline-block;
+    position: relative;
+    padding: 25px;
+    padding-top: 50px;
+}
+
+div.fixed {
+    position: fixed;
+    top: 0px;
+    right: 17px;
+}
+
+div.titlebox {
+    line-height: 0;
+    position: fixed;
+    top: 225px;
+    left: 13%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 60px;
+}
