@@ -1,5 +1,4 @@
 import pickle
-
 import cv2
 import graphviz as graphviz
 import pytesseract
@@ -8,8 +7,8 @@ import streamlit.components.v1 as components
 from PIL import Image
 from twilio.rest import Client
 
-u = "https://storage.googleapis.com/rishit-dagli.appspot.com/My_project-1_1.png"
-page_title = "Patient Upload Screen"
+u = "https://cdn.discordapp.com/attachments/1043363043947581533/1043716871876268132/DYGNOS__2_-removebg-preview.png"
+page_title = "Patient View"
 
 # Set page title and favicon.
 st.set_page_config(page_title=page_title, page_icon=u)

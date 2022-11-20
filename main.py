@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 u = "https://cdn.discordapp.com/attachments/1043363043947581533/1043716871876268132/DYGNOS__2_-removebg-preview.png"
-page_title = "Welcome to DygnosTech"
+page_title = "DygnosTech"
 
 # Set page title and favicon.
 st.set_page_config(page_title=page_title, page_icon=u)
