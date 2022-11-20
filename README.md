@@ -1,6 +1,8 @@
-# Weed Detech
+# DygnosTech
 
-This project helps detect and differentiate weed(unwanted plants) from crops in a field. 
+Today with the number of medications people have to take and considering the multiple doctors one consults for different problems, they inevitably face adverse side effects from these medicines. DygnosTech is a solution for both doctors and patients to make their life easier and not fall prey to these side effects and allow doctors to make better decisions while prescribing a medicine.
+
+We thus ended up building DygnosTech through which doctors and patients can leverage the power of being able to predict the likely side effects a drug would have on the patient. This can greatly help doctors make better decisions as well as for the patient to understand what side effects the drugs he takes have. 
 
 ## Usage
 
