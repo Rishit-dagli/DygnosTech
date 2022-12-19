@@ -6,7 +6,6 @@ opencv-python-headless
 twilio
 streamlit
 pathlib
-pickle
 cv2
 graphviz
 PIL
