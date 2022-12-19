@@ -7,4 +7,3 @@ twilio
 streamlit
 pathlib
 graphviz
-twilio.rest
