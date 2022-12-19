@@ -6,7 +6,6 @@ opencv-python-headless
 twilio
 streamlit
 pathlib
-cv2
 graphviz
 PIL
 twilio.rest
