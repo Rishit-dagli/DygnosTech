@@ -4,3 +4,11 @@ graphviz
 pytesseract
 opencv-python-headless
 twilio
+streamlit
+streamlit.components.v1
+pathlib
+pickle
+cv2
+graphviz
+PIL
+twilio.rest
